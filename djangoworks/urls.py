@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+#from django.conf.urls import include
 
 urlpatterns = [
-    path('tweets/', include('tweets.urls')),
-    #path('admin/', admin.site.urls),
+    #path('tweets/', include('tweets.urls')),
+    #path('twitterManager/', include('twitterManager.urls')),
+    #path('twitterManager/', include('social_django.urls', namespace='social')),
+    path('user/', include('user_auth.urls')),
+    path('user/', include('social_django.urls', namespace='social')),
+    path('admin/', admin.site.urls),
 ]
