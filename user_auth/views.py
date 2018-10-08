@@ -1,13 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from social_django.models import UserSocialAuth
-from djangoworks.configs import twitter
+#from djangoworks.configs import twitter
 from django.http import HttpResponse
-import tweepy
+import tweepy, os
 
 
-ENV['SOCIAL_AUTH_TWITTER_KEY']
-ENV['SOCIAL_AUTH_TWITTER_SECRET']
+SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_AUTH_TWITTER_KEY']
+SOCIAL_AUTH_TWITTER_SECRET = os.environ['SOCIAL_AUTH_TWITTER_SECRET']
 
 @login_required
 def top_page(request):
@@ -16,7 +16,8 @@ def top_page(request):
     if 'words' in request.GET:
         try:
             auth = UserSocialAuth.objects.filter(user=request.user).get()
-            handler = tweepy.OAuthHandler(twitter.SOCIAL_AUTH_TWITTER_KEY, twitter.SOCIAL_AUTH_TWITTER_SECRET)
+            #handler = tweepy.OAuthHandler(twitter.SOCIAL_AUTH_TWITTER_KEY, twitter.SOCIAL_AUTH_TWITTER_SECRET)
+            handler = tweepy.OAuthHandler(SOCIAL_AUTH_TWITTER_KEY, SOCIAL_AUTH_TWITTER_SECRET)
             handler.set_access_token(auth.tokens["oauth_token"],auth.tokens["oauth_token_secret"])
             api = tweepy.API(auth_handler=handler)
 
