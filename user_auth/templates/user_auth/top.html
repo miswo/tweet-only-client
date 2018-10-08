@@ -12,7 +12,7 @@
     {% csrf_token %}
       <div class="form-group">
             
-        <textarea type="text" name="words" class="form-control" rows="3" id="focusedInput"></textarea>
+        <textarea maxlength="140" name="words" class="form-control" rows="3" id="focusedInput"></textarea>
         <div class="d-flex justify-content-end" id="twButton">
             <input type="submit" class="btn btn-primary" value="Tweet">
         </div>
@@ -21,23 +21,14 @@
     </form>
 
     {% if words %}
-    <div>
-      <p>You tweeted "{{ words }}"</p>
+    <div class="balloon1 d-flex justify-content-around">
+      <p>{{ words | urlize | linebreaks }}</p>
     </div>
+   
     {% endif %}
-
-
-
-    <!--div>
-        <p><b>ScreenName</b>:{{ user.access_token.screen_name }}</p>
-          <p><b>UserId</b>:{{ user.access_token.user_id }}</p>
-          <p><b>OAuthTokenSecret</b>:{{ user.access_token.oauth_token_secret }}</p>
-          <p><b>OAuthToken</b>:{{ user.access_token.oauth_token }}</p>
-          <p><b>AuthTime</b>:{{ user.extra_data.auth_time }}</p>
-  
-  
-      </div-->
-
+    <div class="text-center mt-5">
+        <img src="../../../../static/img/animal_hamster.png" width="150px"/>
+    </div>
     </div>
     </div>
     </div>
