@@ -6,6 +6,9 @@ from django.http import HttpResponse
 import tweepy
 
 
+ENV['SOCIAL_AUTH_TWITTER_KEY']
+ENV['SOCIAL_AUTH_TWITTER_SECRET']
+
 @login_required
 def top_page(request):
     user = UserSocialAuth.objects.get(user_id=request.user.id)
