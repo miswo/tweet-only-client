@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-from djangoworks.configs import twitter
+#from djangoworks.configs import twitter
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -134,8 +134,8 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
-SOCIAL_AUTH_TWITTER_KEY = '1ajVPYtNS09p27YPq8SLo54y7' #twitter.SOCIAL_AUTH_TWITTER_KEY
-SOCIAL_AUTH_TWITTER_SECRET = 'DP7VOUXFd7sLWRWsJnhMIthxHac4MgCETUA2KSvxzVXAOfw4xl' #twitter.SOCIAL_AUTH_TWITTER_SECRET
+SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_AUTH_TWITTER_KEY']
+SOCIAL_AUTH_TWITTER_SECRET = os.environ['SOCIAL_AUTH_TWITTER_SECRET']
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/user/top' # リダイレクトURL
 
 
