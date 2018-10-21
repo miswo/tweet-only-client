@@ -26,6 +26,9 @@ SECRET_KEY = '5ctha_s_n&!mut-q)k5bd=dl$53k-rd*f@z=klnr@q+gh+s2)b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+def isDebug():
+    global DEBUG
+    return DEBUG
 
 ALLOWED_HOSTS = []
 
