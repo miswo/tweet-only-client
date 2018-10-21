@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '5ctha_s_n&!mut-q)k5bd=dl$53k-rd*f@z=klnr@q+gh+s2)b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 def isDebug():
     global DEBUG
@@ -142,7 +142,7 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
-
+'''
 if DEBUG == True:
     try:
         from djangoworks.configs import twitter
@@ -151,8 +151,9 @@ if DEBUG == True:
     except:
         pass
 else:
-    SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_AUTH_TWITTER_KEY']
-    SOCIAL_AUTH_TWITTER_SECRET = os.environ['SOCIAL_AUTH_TWITTER_SECRET']
+'''    
+SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_AUTH_TWITTER_KEY']
+SOCIAL_AUTH_TWITTER_SECRET = os.environ['SOCIAL_AUTH_TWITTER_SECRET']
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/top' # リダイレクトURL
 

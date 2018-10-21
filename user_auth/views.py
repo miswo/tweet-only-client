@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from social_django.models import UserSocialAuth
-from django.http import HttpResponse
-from djangoworks.settings import isDebug
 import tweepy, os
 
+'''
+from djangoworks.settings import isDebug
 if isDebug() == True:
     try:
         from djangoworks.configs import twitter
@@ -13,8 +13,10 @@ if isDebug() == True:
     except:
         pass
 else:
-    SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_AUTH_TWITTER_KEY']
-    SOCIAL_AUTH_TWITTER_SECRET = os.environ['SOCIAL_AUTH_TWITTER_SECRET']
+'''
+
+SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_AUTH_TWITTER_KEY']
+SOCIAL_AUTH_TWITTER_SECRET = os.environ['SOCIAL_AUTH_TWITTER_SECRET']
 
 
 @login_required
