@@ -2,11 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from social_django.models import UserSocialAuth
 from django.http import HttpResponse
-from djangoworks.settings import isDebug
+from django.conf import settings
 import tweepy, os
 
-
-if isDebug() == True:
+if settings.DEBUG:
     from djangoworks.configs import twitter
     SOCIAL_AUTH_TWITTER_KEY = twitter.SOCIAL_AUTH_TWITTER_KEY
     SOCIAL_AUTH_TWITTER_SECRET = twitter.SOCIAL_AUTH_TWITTER_SECRET
