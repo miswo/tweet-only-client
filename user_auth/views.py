@@ -6,9 +6,12 @@ from djangoworks.settings import isDebug
 import tweepy, os
 
 if isDebug() == True:
-    from djangoworks.configs import twitter
-    SOCIAL_AUTH_TWITTER_KEY = twitter.SOCIAL_AUTH_TWITTER_KEY
-    SOCIAL_AUTH_TWITTER_SECRET = twitter.SOCIAL_AUTH_TWITTER_SECRET
+    try:
+        from djangoworks.configs import twitter
+        SOCIAL_AUTH_TWITTER_KEY = twitter.SOCIAL_AUTH_TWITTER_KEY
+        SOCIAL_AUTH_TWITTER_SECRET = twitter.SOCIAL_AUTH_TWITTER_SECRET
+    except:
+        pass
 else:
     SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_AUTH_TWITTER_KEY']
     SOCIAL_AUTH_TWITTER_SECRET = os.environ['SOCIAL_AUTH_TWITTER_SECRET']
