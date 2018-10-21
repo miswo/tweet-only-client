@@ -38,14 +38,14 @@ def top(request):
             print(msg)
             api.update_status(msg)
             
-            return render(request, 'user_auth/top.html', Message)
+            return render(request, 'top.html', Message)
 
         except:
             ErrorMessage = {
-                'words': "エラーが発生したからツイートできなかった。",
+                'words': "Couldn't tweet because you said the same thing again.",
             }
-            return render(request, 'user_auth/top.html', ErrorMessage)
+            return render(request, 'top.html', ErrorMessage)
     else: 
 
-        return render(request,'user_auth/top.html',{'user': user})
+        return render(request,'top.html',{'user': user})
 

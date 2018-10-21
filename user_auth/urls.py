@@ -7,7 +7,7 @@ from django.conf.urls.static import static #静的ファイルを表示させる
 app_name='user_auth'
 
 urlpatterns=[
-    path('', auth_views.LoginView.as_view(template_name='user_auth/login.html'),name='login'),
+    path('', auth_views.LoginView.as_view(template_name='login.html'),name='login'),
     path('top/', views.top, name="top"), # リダイレクト
     
     #path('logout/', auth_views.LogoutView.as_view(template_name='user_auth/logout.html'), name='logout'),

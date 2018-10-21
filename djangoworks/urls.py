@@ -19,9 +19,6 @@ from django.urls import include, path
 #from django.conf.urls import include
 
 urlpatterns = [
-    #path('tweets/', include('tweets.urls')),
-    #path('twitterManager/', include('twitterManager.urls')),
-    #path('twitterManager/', include('social_django.urls', namespace='social')),
     path('', include('user_auth.urls')),
     path('', include('social_django.urls', namespace='social')),
     #path('admin/', admin.site.urls),
